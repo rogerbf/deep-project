@@ -4,3 +4,4 @@ package
 deep-project*.tgz
 npm-debug.log
 coverage
+.vscode

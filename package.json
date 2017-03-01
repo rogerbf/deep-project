@@ -1,7 +1,7 @@
 {
   "name": "deep-project",
   "version": "0.0.1",
-  "description": "extract properties from an object",
+  "description": "pick properties off of an object",
   "main": "index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -18,7 +18,9 @@
     "project",
     "select",
     "object",
-    "keymap"
+    "keymap",
+    "filter",
+    "query"
   ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",

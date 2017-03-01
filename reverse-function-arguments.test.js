@@ -1,4 +1,4 @@
-const reverse = require(`./reverse-argument-order`)
+const reverse = require(`./reverse-function-arguments`)
 
 test(`reversing arguments`, () => {
   const fn = jest.fn((a, b) => a + b)

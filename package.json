@@ -1,38 +1,48 @@
 {
   "name": "deep-project",
-  "version": "0.0.1",
-  "description": "pick properties off of an object",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
-    "start": "node index.js",
-    "watch:start": "chokidar \"*.js\" \"./**/*.js\" -c \"npm run start\"",
-    "eslint": "eslint .",
-    "eslint:fix": "eslint --fix .",
+    "prebuild": "npm test && rimraf distribution",
+    "build": "cross-env BABEL_ENV=production babel --out-dir distribution source",
+    "prepublish": "npm run nsp && npm run build",
+    "start": "npm run build && node ./distribution/index.js",
+    "watch:start": "chokidar \"source/*.js\" \"source/**/*.js\" -c \"npm run start\"",
+    "eslint": "eslint source",
+    "eslint:fix": "eslint --fix source",
+    "repl": "npm run build && babel-node",
+    "nsp": "nsp check",
     "watch:test": "jest --config .jest --watch",
     "coverage": "jest --config .jest --coverage",
     "watch:coverage": "jest --config .jest --coverage --watch"
   },
-  "keywords": [
-    "pick",
-    "project",
-    "select",
-    "object",
-    "keymap",
-    "filter",
-    "query"
-  ],
+  "keywords": [],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
     "chokidar-cli": "^1.2.0",
+    "cross-env": "^3.1.4",
     "eslint": "^3.16.1",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.2",
+    "eslint-config-standard": "^7.0.0",
+    "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
-    "jest-cli": "^19.0.2"
+    "jest-cli": "^19.0.2",
+    "nsp": "^2.6.2",
+    "rimraf": "^2.6.1"
   },
+  "files": [
+    "distribution",
+    "README.md"
+  ],
   "dependencies": {
+    "curly-notation-to-dotpath": "^1.0.0",
     "lodash-pickdeep": "^1.0.2"
   },
   "repository": {

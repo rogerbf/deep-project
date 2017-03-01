@@ -1,7 +1,8 @@
 node_modules
+distribution
 .DS_Store
 package
 deep-project*.tgz
 npm-debug.log
-coverage
 .vscode
+coverage

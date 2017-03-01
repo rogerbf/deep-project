@@ -1,7 +1,7 @@
 {
   "name": "deep-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "copy properties off of an object",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -18,7 +18,14 @@
     "coverage": "jest --config .jest --coverage",
     "watch:coverage": "jest --config .jest --coverage --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "project",
+    "pick",
+    "select",
+    "curly notation",
+    "query",
+    "filter"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {

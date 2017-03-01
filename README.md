@@ -1,6 +1,6 @@
 # deep-project
 
-
+Copy properties off of an object.
 
 ## usage
 
